@@ -5,7 +5,11 @@ import os
 from groq import Groq
 
 # Set up Groq client
-client = Groq(api_key="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")
+client = Groq(
+    api_key=os.environ["GROQ_API_KEY"]
+)
+
+
 
 def extract_text_from_pdf(pdf_file):
     pdf_reader = PyPDF2.PdfReader(pdf_file)
